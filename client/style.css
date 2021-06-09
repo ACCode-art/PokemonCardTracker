@@ -1,0 +1,441 @@
+* {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  background-color: #e6e4e4;
+}
+
+.header {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  padding: 0 3%;
+  background-color: rgba(105, 105, 105, 0.274);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.header .header__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+}
+
+.header .header__left img {
+  width: 70px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -webkit-animation: shine 300ms;
+          animation: shine 300ms;
+}
+
+.header .header__left p {
+  margin-left: 10px;
+}
+
+.header .header__left img:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.header .header__mid {
+  width: 300px;
+}
+
+.header .header__mid .header__search {
+  padding-left: 5px;
+  width: 100%;
+  border: none;
+  height: 30px;
+  outline: none;
+}
+
+.header .header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.header .header__right .header__decks {
+  color: white;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.header .header__right .header__decks:hover {
+  opacity: 0.6;
+}
+
+.main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 50px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.pokemonContainer {
+  position: relative;
+  background-color: rosybrown;
+  background-position: center;
+  width: 240px;
+  height: 335px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.pokemonContainer__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  background-color: rgba(0, 0, 0, 0.596);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.pokemonContainer__overlay h2 {
+  font-size: 15px;
+}
+
+.pokemonContainer__overlay .set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pokemonContainer__overlay:hover {
+  opacity: 1;
+  position: absolute;
+  cursor: pointer;
+}
+
+.header__right .header__rightImg:hover {
+  cursor: pointer;
+}
+
+.decks__overlay {
+  display: none;
+  color: #fbfbfb;
+  position: fixed;
+  top: 101px;
+  right: 0;
+  width: 300px;
+  background-color: rgba(18, 61, 78, 0.89);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.decks__overlay .decks__overlayOption {
+  color: #fbfbfb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.decks__overlay .decks__overlayOption:hover {
+  background-color: grey;
+}
+
+.createDeck__overlay {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 5, 5, 0.65);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.createDeck__overlay .createDeck__overlayContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40vh;
+  height: 40vh;
+}
+
+.createDeck__overlay .createDeck__overlayContainer .createDeck__overlayExit {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.createDeck__overlay .createDeck__overlayContainer p {
+  font-size: 25px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.createDeck__overlay .createDeck__overlayContainer input,
+.createDeck__overlay .createDeck__overlayContainer button {
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  outline: none;
+}
+
+.createDeck__overlay .createDeck__overlayContainer button {
+  cursor: pointer;
+}
+
+.saved__deck {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.saved__deck .saved__deckName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.356);
+  width: 60%;
+  height: 20%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.saved__deck:hover {
+  opacity: 0.8;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  border-radius: 50px;
+}
+
+.main__overlayCollection {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.main__overlayCollection .main__overlayPokemon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.main__overlayCollection .main__overlayPokemon .prizedDelete img {
+  width: 15px;
+}
+
+.main__overlayCollection .main__overlayPokemon p {
+  font-size: 12px;
+}
+
+.main__overlayPokemon:hover {
+  background-color: rgba(255, 255, 255, 0.349);
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+  -webkit-animation: mymove 300ms ease-in-out;
+          animation: mymove 300ms ease-in-out;
+}
+
+.show-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: mymove 300ms ease-in-out;
+          animation: mymove 300ms ease-in-out;
+}
+
+.itallic {
+  font-style: italic;
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: gold;
+}
+
+@-webkit-keyframes mymove {
+  from {
+    opacity: 0;
+    right: -500px;
+    background-color: black;
+  }
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes mymove {
+  from {
+    opacity: 0;
+    right: -500px;
+    background-color: black;
+  }
+  to {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@-webkit-keyframes shine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    -webkit-transition-property: left, top, opacity;
+    transition-property: left, top, opacity;
+    -webkit-transition-duration: 0.7s, 0.7s, 0.15s;
+            transition-duration: 0.7s, 0.7s, 0.15s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    -webkit-transition-property: left, top, opacity;
+    transition-property: left, top, opacity;
+  }
+}
+
+@keyframes shine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    -webkit-transition-property: left, top, opacity;
+    transition-property: left, top, opacity;
+    -webkit-transition-duration: 0.7s, 0.7s, 0.15s;
+            transition-duration: 0.7s, 0.7s, 0.15s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    -webkit-transition-property: left, top, opacity;
+    transition-property: left, top, opacity;
+  }
+}
+/*# sourceMappingURL=style.css.map */

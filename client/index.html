@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+    </style>
+    <title>Charizard Info.io</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__left">
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngkit.com%2Fpng%2Ffull%2F975-9754487_mega-blastoise-mega-blastoise-pixel-art.png&f=1&nofb=1"
+          alt=""
+        />
+      </div>
+      <div class="header__mid">
+        <input
+          class="header__search"
+          type="text"
+          placeholder="Search for Pokemon..."
+        />
+      </div>
+      <div class="header__right">
+        <div class="header__decks">Decks</div>
+      </div>
+    </div>
+
+    <div class="main"></div>
+    <div class="decks__overlay">
+      <a class="decks__overlayOption" href="/decks.html">View All Decks</a>
+      <div class="decks__overlayOption decks__overlayCreateDeck">
+        Create a Deck
+      </div>
+    </div>
+    <div class="createDeck__overlay">
+      <div class="createDeck__overlayContainer">
+        <p class="createDeck__overlayExit">exit</p>
+        <div class="createDeck__overlayTitle">
+          <p>Create a deck</p>
+        </div>
+        <input
+          class="createDeck__input"
+          type="text"
+          placeholder="Deck name..."
+        />
+        <button class="createDeck__button">Add Deck</button>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
